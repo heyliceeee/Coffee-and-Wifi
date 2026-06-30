@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Find Your Next Café{% endblock %}
+
+{% block content %}
+<div class="hero-section text-center d-flex align-items-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Find the Best Cafés Near You</h1>
+    <p class="lead mt-3">
+      Compare coffee quality, wifi strength, and power outlets — all in one place.
+    </p>
+    <a class="btn btn-primary btn-lg mt-4 px-4" href="{{ url_for('cafes') }}">
+      Explore Cafes
+    </a>
+  </div>
+</div>
+{% endblock %}

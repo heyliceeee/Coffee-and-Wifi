@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}All Cafes{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mb-4">All Cafes</h1>
+
+  <div class="row g-4">
+
+    {% for cafe in cafes[1:] %}
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100">
+
+        <img
+  src="https://coffee.alexflipnote.dev/random"
+  class="card-img-top"
+  alt="Random cafe photo">
+
+        <div class="card-body">
+          <h5 class="card-title">{{ cafe[0] }}</h5>
+
+          <p class="card-text mb-1"><strong>Opens:</strong> {{ cafe[2] }}</p>
+          <p class="card-text mb-1"><strong>Closes:</strong> {{ cafe[3] }}</p>
+
+          <p class="card-text mt-3">
+            <strong>Coffee:</strong> {{ cafe[4] }}<br>
+            <strong>Wifi:</strong> {{ cafe[5] }}<br>
+            <strong>Power:</strong> {{ cafe[6] }}
+          </p>
+
+          <a href="{{ cafe[1] }}" target="_blank" class="btn btn-outline-primary btn-sm mt-3">
+            Open in Maps
+          </a>
+        </div>
+
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  <p class="mt-4"><a href="{{ url_for('home') }}">Back to Home</a></p>
+</div>
+{% endblock %}
